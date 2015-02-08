@@ -43,7 +43,7 @@ public  class
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ((Main) activity).onSectionAttached(
-                getArguments().getInt(ARG_SECTION_NUMBER));
+//        ((Main) activity).onSectionAttached(
+//                getArguments().getInt(ARG_SECTION_NUMBER));
     }
 }
