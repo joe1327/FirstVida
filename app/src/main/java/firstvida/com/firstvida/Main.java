@@ -30,7 +30,7 @@ public class Main extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = "Sin Fragment por onCreate";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -48,46 +48,49 @@ public class Main extends ActionBarActivity
         switch (position+1){
             case 1:
                 aux = ProfileFragment1.newInstance(position);
+                mTitle = getString(R.string.title_section1);
                 break;
             case 2:
                 aux = Fragment2.newInstance(position);
+                mTitle = getString(R.string.title_section2);
                 break;
             case 3:
                 aux = Fragment3.newInstance(position);
+                mTitle = getString(R.string.title_section3);
                 break;
             case 4:
                 aux = Fragment4.newInstance(position);
+                mTitle = getString(R.string.title_section4);
                 break;
             case 5:
                 aux = Fragment5.newInstance(position);
+                mTitle = getString(R.string.title_section5);
                 break;
         }
-
-
         fragmentManager.beginTransaction()
                 .replace(R.id.container, aux )
                 .commit();
     }
 
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
-                break;
-            case 4:
-                mTitle = getString(R.string.title_section4);
-                break;
-            case 5:
-                mTitle = getString(R.string.title_section5);
-                break;
-        }
-    }
+//    public void onSectionAttached(int number) {
+//        switch (number) {
+//            case 1:
+//                mTitle = getString(R.string.title_section1);
+//                break;
+//            case 2:
+//                mTitle = getString(R.string.title_section2);
+//                break;
+//            case 3:
+//                mTitle = getString(R.string.title_section3);
+//                break;
+//            case 4:
+//                mTitle = getString(R.string.title_section4);
+//                break;
+//            case 5:
+//                mTitle = getString(R.string.title_section5);
+//                break;
+//        }
+//    }
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
