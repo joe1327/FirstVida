@@ -30,7 +30,7 @@ public class Main extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = "Sin Fragment por onCreate";
+        //mTitle = "Sin Fragment por onCreate";
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
