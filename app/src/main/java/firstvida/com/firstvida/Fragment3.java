@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by joe1327 on 8/2/15.
  */
-public  class Fragment2 extends Fragment {
+public  class Fragment3 extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -21,15 +21,15 @@ public  class Fragment2 extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static Fragment2 newInstance(int sectionNumber) {
-        Fragment2 fragment = new Fragment2();
+    public static Fragment3 newInstance(int sectionNumber) {
+        Fragment3 fragment = new Fragment3();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public Fragment2() {
+    public Fragment3() {
     }
 
     @Override

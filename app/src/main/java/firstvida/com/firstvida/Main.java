@@ -51,8 +51,30 @@ public class Main extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+
+        Fragment aux = new Fragment();
+
+        switch (position){
+            case 1:
+                aux = new Fragment1();
+                break;
+            case 2:
+                aux = new Fragment2();
+                break;
+            case 3:
+                aux = new Fragment3();
+                break;
+            case 4:
+                aux = new Fragment4();
+                break;
+            case 5:
+                aux = new Fragment5();
+                break;
+        }
+
+
         fragmentManager.beginTransaction()
-                .replace(R.id.container, Fragment2.newInstance(position + 1))
+                .replace(R.id.container, aux)
                 .commit();
     }
 
@@ -106,44 +128,5 @@ public class Main extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((Main) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
-    }
 
 }
